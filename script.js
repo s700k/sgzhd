@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document。addEventListener('DOMContentLoaded'， function() {
     const solveBtn = document.getElementById('solveBtn');
     const stopBtn = document.getElementById('stopBtn');
     const resultText = document.getElementById('resultText');
@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function startCalculation() {
         try {
             const numList = document.getElementById('numList').value
-                .split(',')
-                .map(x => parseInt(x.trim()))
-                .filter(x => !isNaN(x));
+                。split(',')
+                。map(x => parseInt(x.trim()))
+                。filter(x => !isNaN(x));
                 
             const count = parseInt(document.getElementById('count').value);
             const targetSum = parseInt(document.getElementById('target').value);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             statusBar.textContent = '计算中...';
             
             // 使用Web Worker进行后台计算
-            worker = new Worker('worker.js');
+            worker = new Worker('/sgzhd/worker.js');
             
             worker.onmessage = function(e) {
                 const { results, elapsedTime, algoUsed } = e.data;
@@ -91,4 +91,5 @@ document.addEventListener('DOMContentLoaded', function() {
         resultText.textContent = output;
         statusBar.textContent = `计算完成 - 使用 ${algoUsed} 算法找到 ${results.length} 个组合`;
     }
+
 });
