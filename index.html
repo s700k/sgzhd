@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演出艺人组合计算工具Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>演出艺人组合计算工具Pro</h1>
+        
+        <div class="input-section">
+            <h2>输入参数</h2>
+            
+            <div class="form-group">
+                <label for="numList">艺人魅力(逗号分隔):</label>
+                <input type="text" id="numList" value="1,2,3,4,5,6,7,8,9,10">
+            </div>
+            
+            <div class="form-group">
+                <label for="count">艺人数量(默认5):</label>
+                <input type="number" id="count" min="1" value="5">
+            </div>
+            
+            <div class="form-group">
+                <label for="target">演出总魅力:</label>
+                <input type="number" id="target" min="1" value="10">
+            </div>
+            
+            <div class="form-group">
+                <label for="threads">线程数:</label>
+                <select id="threads">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="algorithm">算法(默认自动):</label>
+                <select id="algorithm">
+                    <option value="auto">自动</option>
+                    <option value="dp">动态规划</option>
+                    <option value="backtrack">回溯剪枝</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button id="solveBtn">开始计算</button>
+                <button id="stopBtn" disabled>停止计算</button>
+            </div>
+        </div>
+        
+        <div class="result-section">
+            <h2>计算结果</h2>
+            <div id="resultText" class="result-text"></div>
+            <div id="statusBar" class="status-bar">就绪</div>
+        </div>
+    </div>
+	
+	<footer>
+        <p>© 2025 Fz.Studio - 版权所有</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
