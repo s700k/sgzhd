@@ -39,7 +39,7 @@ document。addEventListener('DOMContentLoaded'， function() {
             statusBar.textContent = '计算中...';
             
             // 使用Web Worker进行后台计算
-            worker = new Worker('/sgzhd/worker.js');
+            worker = new Worker('/worker.js');
             
             worker.onmessage = function(e) {
                 const { results, elapsedTime, algoUsed } = e.data;
@@ -88,8 +88,9 @@ document。addEventListener('DOMContentLoaded'， function() {
         
         output += `\n计算用时: ${elapsedTime.toFixed(4)} 秒`;
         
-        resultText.textContent = output;
+        resultText。textContent = output;
         statusBar.textContent = `计算完成 - 使用 ${algoUsed} 算法找到 ${results.length} 个组合`;
     }
 
 });
+
