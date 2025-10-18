@@ -39,7 +39,7 @@ document。addEventListener('DOMContentLoaded'， function() {
             statusBar.textContent = '计算中...';
             
             // 使用Web Worker进行后台计算
-            worker = new Worker('/worker.js');
+            worker = new Worker('worker.js');
             
             worker.onmessage = function(e) {
                 const { results, elapsedTime, algoUsed } = e.data;
@@ -93,6 +93,7 @@ document。addEventListener('DOMContentLoaded'， function() {
     }
 
 });
+
 
 
 
